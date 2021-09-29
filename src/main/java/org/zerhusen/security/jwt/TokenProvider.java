@@ -53,7 +53,7 @@ public class TokenProvider implements InitializingBean {
       String authorities = authentication.getAuthorities().stream()
          .map(GrantedAuthority::getAuthority)
          .collect(Collectors.joining(","));
-
+System.out.println("roles found in Primary IAM: " + authorities);
       long now = (new Date()).getTime();
       Date validity;
       if (rememberMe) {

@@ -48,6 +48,8 @@ public class AuthenticationRestController {
 
       HttpHeaders httpHeaders = new HttpHeaders();
       httpHeaders.add(JWTFilter.AUTHORIZATION_HEADER, "Bearer " + jwt);
+      System.out.println("\nreturning access token for username: " + authentication.getName());
+      System.out.println("\n access token = " + jwt);
 
       return new ResponseEntity<>(new JWTToken(jwt), httpHeaders, HttpStatus.OK);
    }
@@ -63,7 +65,7 @@ public class AuthenticationRestController {
          this.idToken = idToken;
       }
 
-      @JsonProperty("id_token")
+      @JsonProperty("access_token")
       String getIdToken() {
          return idToken;
       }

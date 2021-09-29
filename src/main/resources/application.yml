@@ -36,5 +36,5 @@ jwt:
 
 logging:
   level:
-    org.zerhusen.security: DEBUG
+    org.zerhusen.security: INFO
 #    org.springframework.security: DEBUG
